@@ -131,12 +131,11 @@ Western-Cafe-Performance-Dashboard
 
 Replace this with:
 
-```markdown
-"D:/Data_Analysis_Project\Western_Cafe_Sales_Analytics_project/Dashboard_screenshot.png"
-```
+<h2>🖼️ Dashboard Preview</h2>
 
----
-
+<p align="center">
+  <img src="Dashboard_screenshot.png" alt="Western Cafe Performance Dashboard" width="1000"/>
+</p>
 ## 🚀 Skills Demonstrated
 
 - SQL
