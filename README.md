@@ -147,11 +147,155 @@ Replace this with:
 - Data Analysis
 - Dashboard Design
 - Business Intelligence
+# 📊 Sample SQL Queries
+
+## 1️⃣ Total Revenue
+
+```sql
+SELECT
+    SUM(total_spent) AS total_revenue
+FROM clean_cafe_sales_data;
+```
+
+### Result
+
+| Total Revenue |
+|--------------:|
+| $89,146 |
 
 ---
 
-## 👨‍💻 Author
+## 2️⃣ Top 5 Revenue-Generating Products
+
+```sql
+SELECT
+    item,
+    SUM(total_spent) AS total_revenue
+FROM clean_cafe_sales_data
+GROUP BY item
+ORDER BY total_revenue DESC
+LIMIT 5;
+```
+
+### Result
+
+| Product | Revenue |
+|---------|---------:|
+| Salad | $17,348 |
+| Sandwich | $13,715 |
+| Smoothie | $13,347 |
+| Juice | $10,521 |
+| Cake | $10,402 |
+
+---
+
+## 3️⃣ Revenue by Store Location
+
+```sql
+SELECT
+    store_location,
+    SUM(total_spent) AS revenue
+FROM clean_cafe_sales_data
+GROUP BY store_location
+ORDER BY revenue DESC;
+```
+
+### Result
+
+| Store Location | Revenue |
+|---------------|---------:|
+| Others | $35,000 |
+| In-store | $27,000 |
+| Takeaway | $27,000 |
+
+---
+
+## 4️⃣ Revenue by Payment Method
+
+```sql
+SELECT
+    payment_method,
+    SUM(total_spent) AS revenue
+FROM clean_cafe_sales_data
+GROUP BY payment_method
+ORDER BY revenue DESC;
+```
+
+### Result
+
+| Payment Method | Revenue |
+|---------------|---------:|
+| Cash | $48,249 |
+| Credit Card | $20,489 |
+| Digital Wallet | $20,408 |
+
+---
+
+## 5️⃣ Product Revenue Contribution
+
+```sql
+SELECT
+    item,
+    ROUND(
+        SUM(total_spent)*100.0/
+        SUM(SUM(total_spent)) OVER(),2
+    ) AS revenue_contribution_pct
+FROM clean_cafe_sales_data
+GROUP BY item
+ORDER BY revenue_contribution_pct DESC;
+```
+
+### Result
+
+| Product | Contribution |
+|---------|-------------:|
+| Salad | 19.46% |
+| Sandwich | 15.39% |
+| Smoothie | 14.97% |
+| Juice | 11.80% |
+| Cake | 11.67% |
+
+---
+
+# 📌 Key Business Insights
+
+- Generated **$89.1K** in revenue across **10K** customer transactions.
+- Sold **28.8K** products with an average order value of **$8.91**.
+- **Cash** contributed **54.12%** of total revenue.
+- **Other** store locations generated the highest revenue.
+- Revenue peaked during **June** and **October**.
+- **Salad, Sandwich, and Smoothie** were the highest revenue-generating products.
+
+---
+
+# 🚀 Skills Demonstrated
+
+- SQL
+- PostgreSQL
+- Microsoft Excel
+- Power BI
+- DAX
+- Data Cleaning
+- Data Analysis
+- Dashboard Design
+- Business Intelligence
+- Data Visualization
+- Data Storytelling
+
+---
+
+# 📈 Future Enhancements
+
+- Profit Analysis
+- Customer Segmentation
+- Sales Forecasting
+- Inventory Dashboard
+- Time Intelligence Dashboard
+
+---
+
+# 👨‍💻 Author
 
 **Ganesh Kurmi**
 
-⭐ If you like this project, please give it a star.
+⭐ **If you found this project helpful, please consider giving it a Star!**
