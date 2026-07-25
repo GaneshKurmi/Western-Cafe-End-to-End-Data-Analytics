@@ -132,7 +132,7 @@ Western-Cafe-Performance-Dashboard
 Replace this with:
 
 ```markdown
-![Dashboard](Images/Dashboard.png)
+"D:/Data_Analysis_Project\Western_Cafe_Sales_Analytics_project/Dashboard_screenshot.png"
 ```
 
 ---
